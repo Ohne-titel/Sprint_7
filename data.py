@@ -27,3 +27,10 @@ class TestOrderData:
             "BLACK"
         ]
     }
+
+
+class ResponseMessages:
+    four_hundred_nine_message = "Этот логин уже используется. Попробуйте другой."
+    four_hundred_massage = "Недостаточно данных для создания учетной записи"
+    four_hundred_login_massage = "Недостаточно данных для входа"
+    four_hundred_four_login_message = "Учетная запись не найдена"

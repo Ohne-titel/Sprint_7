@@ -7,8 +7,9 @@ from helper import CourierGenerate, LoginCourierGenerate
 @pytest.fixture(scope='function')
 @allure.step('Создание шаблонного курьера')
 def default_courier():
-    response = SamokatApi.create_courier(CourierGenerate.courier_body_with_faker())
-    return response
+    generated_stuff = CourierGenerate.courier_body_with_faker()
+    response = SamokatApi.create_courier(generated_stuff)
+    return response, generated_stuff
 
 
 @pytest.fixture(scope='function')

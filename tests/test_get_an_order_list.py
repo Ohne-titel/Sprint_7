@@ -9,5 +9,5 @@ class TestOrderList:
         order_list = SamokatApi.get_an_order_list(self)
 
         assert order_list.status_code == 200
-        print(order_list)
+
 

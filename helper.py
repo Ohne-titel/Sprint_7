@@ -1,6 +1,8 @@
 import allure
+import requests
 from faker import Faker
 import data
+import urls
 
 
 class ChangeTestDataRegistration:
@@ -50,3 +52,13 @@ class ChangeTestDataLogin:
         return body
 
 
+class DeleteCourier:
+    @staticmethod
+    def delete_courier(login, password):
+        response = requests.post(urls.BASE_URL + urls.LOGIN_COURIER_ENDPOINT, data={
+            "login": login,
+            "password": password,
+        })
+        requests.delete(urls.BASE_URL + urls.DELETE_COURIER_ENDPOINT + f"/{response.json()["id"]}")
+
+        return response
